@@ -64,3 +64,4 @@ Made specifically for cell culture analyses performed at the 3D-MMAP research gr
 - The 'Edit mask' function now reminds users to remove junk before saving
 - Updated clustering function to produce statistics in µm, not pixels
 - It is now possible to close figures used for drawing/adding points
+- Rearranged Excel file, added extra statistics
