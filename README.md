@@ -52,7 +52,7 @@ Made specifically for cell culture analyses performed at the 3D-MMAP research gr
 - Nuclei clusters now saves an image of the analysis
 - Changed the image for indicating diameters to the distance transformed image with the skeleton overlaid
 
-## 1.5 Released 11/08/2021
+## 1.5 Released 17/08/2021
 - Previous Excel files will be incompatible
 - Clustering now overwrites existing data
 - The 'Branching points' function now saves coordinates, and loads previously saved coordinates
@@ -65,3 +65,5 @@ Made specifically for cell culture analyses performed at the 3D-MMAP research gr
 - Updated clustering function to produce statistics in µm, not pixels
 - It is now possible to close figures used for drawing/adding points
 - Rearranged Excel file, added extra statistics
+- Added a 'back' button to thresholding
+- Fixed a bug in the 'Remove junk' function
