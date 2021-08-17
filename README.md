@@ -67,3 +67,9 @@ Made specifically for cell culture analyses performed at the 3D-MMAP research gr
 - Rearranged Excel file, added extra statistics
 - Added a 'back' button to thresholding
 - Fixed a bug in the 'Remove junk' function
+
+## 1.5.1 Released 17/08/2021
+- Changed default pixel size to 0.664
+- Changed default minimum branch length to 100
+- Clicking the undo/back/done button while drawing now brings up the figure
+- Minimum branch length is now loaded from the excel file if possible
