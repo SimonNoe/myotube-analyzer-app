@@ -76,3 +76,4 @@ Made specifically for cell culture analyses performed at the 3D-MMAP research gr
 
 ## 1.5.2
 - Added a check that removes branching points outside the mask
+- Added the option to choose the right image for nuclei indication
