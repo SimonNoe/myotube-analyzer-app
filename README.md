@@ -73,3 +73,6 @@ Made specifically for cell culture analyses performed at the 3D-MMAP research gr
 - Changed default minimum branch length to 100
 - Clicking the undo/back/done button while drawing now brings up the figure
 - Minimum branch length is now loaded from the excel file if possible
+
+## 1.5.2
+- Added a check that removes branching points outside the mask
