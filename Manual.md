@@ -59,7 +59,7 @@ If no output file exists yet, clicking 'Indicate nuclei' will prompt the user to
 * The **switch** determines which image is opened when adding/removing nuclei: left or right
 * **Reset** brings the nuclei coordinates back to the state they were in when the function was opened
 * **Redo analysis** brings back the initial guess for the nuclei centres
-* * **Back** takes the user back to function selection without saving anything
+* **Back** takes the user back to function selection without saving anything
 * **Save & exit** saves the nuclei coordinates and counts to the excel output file, and returns the user to function selection
 
 #### Nuclei indication guidelines
@@ -72,6 +72,12 @@ If no output file exists yet, clicking 'Indicate nuclei' will prompt the user to
 **Output:** an Excel file with nuclei coordinates on the first page and nuclei counts on the second page, named after the blue channel image with suffix '_output'.
 
 ### 5. Nuclei clustering
+This function uses the nuclei coordinates determined in the previous function to find nuclei clusters based on 3 parameters: number of neighbours, distance between nuclei and nucleus diameter.
+
+After clicking the 'Nuclei clustering' button, the user is prompted to enter the nucleus diameter, and the maximal edge-to-edge distance between nuclei. Larger values will yield more and larger clusters. The program will then run the clustering algorithm with the parameters specified, calculate the trend line through each cluster and show a plot of all  clusters. Nuclei that do not belong to a cluster are red and marked as '-1'. All clusters have a positive number. Before saving, make sure to move the legend out of the figure. An image of the plot and legend is saved in the state it was in when telling the program to save.
+
+**Output:** cluster stats on the 2nd page of the output excel file, cluster/trendline properties on the 3rd. A PNG image of the cluster plot, named after the blue channel image with suffix '_clusters'.
+
 ### 6. Branching points and diameter measurements
 
 ## Outputs
