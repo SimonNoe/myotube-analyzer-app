@@ -1,5 +1,5 @@
 # Myotube Analyzer Manual
-This manual contains installation instructions and user guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app: (link)
+This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app: (link)
 
 ## Installation
 1. Download and run the installer for your operating system (Mac or Windows)
@@ -12,6 +12,15 @@ This manual contains installation instructions and user guidelines for performin
 The installer will now complete the installation, after which you can start the app by running the .exe file in the installation folder, or by using the desktop shortcut if you chose that option.
 
 ## Instructions
+This section explains all buttons and dials of the Myotube Analyzer app, in the order of a normal analysis procedure. The last part of this section gives an overview of all outputs of the app, and explains how to aggregate data from multiple image sets. The guidelines provided in this section are those used for the analyses in the publication about this app. They do not have to be followed to obtain usable results, feel free to determine your own guidelines. You are also free to use the images provided in this repository to test the functionality of the app.
+
+### General
+These are some general tips and rules that may help you when using the Myotube Analyzer:
+* Save regularly! A single error or bug could ruin minutes of work, and all functions of the app support saving and reopening the analysis.
+* Most functions have a statistics panel in the bottom left of the app, where you can keep track of the number of myotubes, number of nuclei, number of branching points...
+* Most functions also have an image control panel, where you can open both the left and right image in a separate window, making it easier to zoom in/move around the image. This is especially useful when editing the mask. Having both the myotube image and the drawing figure side-by-side makes editing a lot easier.
+* All images (both those in the app and those in separate windows) have buttons when you mouse over the top. They can be used to zoom in/out, move around the image, save the image (and the plot)...
+* If you run into an error (evidenced by a sound effect and the app becoming unresponsive), restart the app. 
 
 ### 1. Image selection
 Images used for analysis must be separate RGB channels in the JPG or PNG format. Microscope image files may be exported to these formats, and existing images in other formats may be mass-converted using tools like [XnConvert](https://www.xnview.com/en/xnconvert). To start the analysis, select an image for the red and blue channels. The red channel should contain myotubes, and the blue channel should contain nuclei. The green channel is optional and can be added later if necessary. It should contain a marker for nuclei (such as MyoD).
@@ -46,7 +55,7 @@ Click the 'Edit mask' button to start. If a mask does not exist already, the pro
 * Make sure to fill holes left by nuclei
 * Always remove junk before saving
 
-**Output:** a PNG image containing the mask, with different myotubes in a different colour. The file is named after the red channel image with suffix '_mask'.
+**Output:** a PNG image containing the mask, with different myotubes in a different colour. The file is named after the red channel image with the suffix '_mask'.
 
 ### 4. Nuclei indication
 The counting of nuclei allows for the calculation of fusion index, while the nuclei coordinates allow for clustering in the next step. If a green channel is present, this step will also count the number of nuclei that are positive for the marker in the channel.
@@ -74,7 +83,7 @@ If no output file exists yet, clicking 'Indicate nuclei' will prompt the user to
 ### 5. Nuclei clustering
 This function uses the nuclei coordinates determined in the previous function to find nuclei clusters based on 3 parameters: number of neighbours, distance between nuclei and nucleus diameter.
 
-After clicking the 'Nuclei clustering' button, the user is prompted to enter the nucleus diameter, and the maximal edge-to-edge distance between nuclei. Larger values will yield more and larger clusters. The program will then run the clustering algorithm with the parameters specified, calculate the trend line through each cluster and show a plot of all  clusters. Nuclei that do not belong to a cluster are red and marked as '-1'. All clusters have a positive number. Before saving, make sure to move the legend out of the figure. An image of the plot and legend is saved in the state it was in when telling the program to save.
+After clicking the 'Nuclei clustering' button, the user is prompted to enter the nucleus diameter, and the maximal edge-to-edge distance between nuclei. Larger values will yield more and larger clusters. The minimal number of nuclei in a group is fixed at 4. The program will then run the clustering algorithm with the parameters specified, calculate the trend line through each cluster and show a plot of all clusters. Nuclei that do not belong to a cluster are red and marked as '-1'. All clusters have a positive number. Before saving, make sure to move the legend out of the figure. An image of the plot and legend is saved in the state it was in when telling the program to save.
 
 **Output:** cluster stats on the 1st page of the output excel file, cluster/trendline properties on the 3rd. A PNG image of the cluster plot, named after the blue channel image with suffix '_clusters'.
 
