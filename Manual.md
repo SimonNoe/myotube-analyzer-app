@@ -69,15 +69,36 @@ If no output file exists yet, clicking 'Indicate nuclei' will prompt the user to
   * More than 4 nuclei in the neighbourhood: remove and reassign centres
   * When in doubt: remove and redo
 
-**Output:** an Excel file with nuclei coordinates on the first page and nuclei counts on the second page, named after the blue channel image with suffix '_output'.
+**Output:** an Excel file with nuclei coordinates on the 2nd page and nuclei counts on the 1st page, named after the blue channel image with suffix '_output'.
 
 ### 5. Nuclei clustering
 This function uses the nuclei coordinates determined in the previous function to find nuclei clusters based on 3 parameters: number of neighbours, distance between nuclei and nucleus diameter.
 
 After clicking the 'Nuclei clustering' button, the user is prompted to enter the nucleus diameter, and the maximal edge-to-edge distance between nuclei. Larger values will yield more and larger clusters. The program will then run the clustering algorithm with the parameters specified, calculate the trend line through each cluster and show a plot of all  clusters. Nuclei that do not belong to a cluster are red and marked as '-1'. All clusters have a positive number. Before saving, make sure to move the legend out of the figure. An image of the plot and legend is saved in the state it was in when telling the program to save.
 
-**Output:** cluster stats on the 2nd page of the output excel file, cluster/trendline properties on the 3rd. A PNG image of the cluster plot, named after the blue channel image with suffix '_clusters'.
+**Output:** cluster stats on the 1st page of the output excel file, cluster/trendline properties on the 3rd. A PNG image of the cluster plot, named after the blue channel image with suffix '_clusters'.
 
-### 6. Branching points and diameter measurements
+### 6. Branching
+This function uses the myotube mask to determine myotube properties: number of branching points, myotube coverage and myotube diameter. The branching point analysis is based on the myotube skeleton, lines drawn along the centres of the myotubes.
 
-## Outputs
+Click 'Branching points' to start the function. If no branching point analysis was saved previously, the program will provide an initial guess based on the myotube skeletons. Else, the existing analysis is loaded. The program then brings up the editing functions.
+
+#### Editing functions
+* **Remove points** works the same way as the 'Edit area' function, and removes any branching points inside the drawn areas
+* **Add points** allows the user to indicate branching points: backspace to remove last, enter or double click to finish
+* **Redo** brings back the initial guess for the branching points
+* **Min. branch length** specifies the shortest possible length for a skeleton branch, requires clicking 'redo' for changes to take effect
+* **Find diameter** allows the user to sample points for a diameter measurement, explained below
+* **Back** takes the user back to function selection without saving anything
+* **Save & exit** saves the branching points and myotube statistics to the excel output file, and returns the user to function selection
+
+#### Branching point guidelines
+* Keep the general overview, do not zoom in
+* If you cannot visually distinguish branching points, there should only be one
+* Do not consider bulges for branching points, branches need to contain at least one nucleus (when in doubt, do not add a point)
+
+#### Diameter measurements
+Clicking 'Find diameter' opens a new figure where you can select points for a diameter measurement (same as the 'Add points' function). The image in the figure is the distance transform of the mask, where the intensity of each pixel is the distance to the closest black pixel. The diameter at each sampled point is calculated as this distance x2.
+
+**Output:** statistics on the 1st page of the output file, myotube properties on the 4th page, branching point coordinates on the 5th page and (if applicable) diameter measurements on the 6th page. The image used for diameter measurements, carrying the name of the blue channel image with the suffix '_diameters'.
+
