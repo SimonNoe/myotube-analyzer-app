@@ -101,4 +101,10 @@ Released 24/08/2021
 
 ## Myotube Analyzer v1.5.3
 Released 30/09/2021
-- Swapped dimensions of branching point check to fix bug 
+- Swapped dimensions of branching point check to fix bug
+
+## Myotube Analyzer v2.0 (Public release)
+- Removed upper limits for adjust image function
+- Added a check to see if limits are correct
+- Removed DAPI, MyHC and MyoD labels
+- Renamed Min distance to Max distance
