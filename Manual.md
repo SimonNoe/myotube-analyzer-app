@@ -2,8 +2,8 @@
 This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app: (link)
 
 ## Installation
-1. Download and run the installer for your operating system (Mac or Windows)
-1. Allow the installer to make changes (Only on Windows)
+1. Download and run the installer
+1. Allow the installer to make changes
 1. Click 'Next'
 1. Choose the installation folder (This is where log files appear if you do not opt for a desktop shortcut)
 1. Install MATLAB runtime
@@ -12,7 +12,7 @@ This manual contains installation instructions and intructions + guidelines for 
 The installer will now complete the installation, after which you can start the app by running the .exe file in the installation folder, or by using the desktop shortcut if you chose that option.
 
 ## Instructions
-This section explains all buttons and dials of the Myotube Analyzer app, in the order of a normal analysis procedure. The last part of this section gives an overview of all outputs of the app, and explains how to aggregate data from multiple image sets. The guidelines provided in this section are those used for the analyses in the publication about this app. They do not have to be followed to obtain usable results, feel free to determine your own guidelines. You are also free to use the images provided in this repository to test the functionality of the app.
+This section explains all buttons and dials of the Myotube Analyzer app, in the order of a normal analysis procedure. The last part of this section gives an overview of all outputs of the app, and explains how to aggregate data from multiple image sets. The guidelines provided in this section are those used for the analyses in the publication about this app. You do not have to follow them to obtain usable results, feel free to determine your own guidelines. You are also free to use the images provided in this repository to test the functionality of the app.
 
 ### General
 These are some general tips and rules that may help you when using the Myotube Analyzer:
@@ -111,3 +111,31 @@ Clicking 'Find diameter' opens a new figure where you can select points for a di
 
 **Output:** statistics on the 1st page of the output file, myotube properties on the 4th page, branching point coordinates on the 5th page and (if applicable) diameter measurements on the 6th page. The image used for diameter measurements, carrying the name of the blue channel image with the suffix '_diameters'.
 
+## Outputs
+The main strength of the Myotube Analyzer is that it has a lot of different outputs to allow you to come up with your own metrics or analyses. Not all of them were tested in the paper about the program. All numerical outputs are grouped in an Excel file named after the nucleus channel image with separate sheets for different parts of the analysis. Image outputs are in PNG format, named after either the nucleus or myotube channel. You can find examples of these outputs in the 'Example analysis' folder.
+
+### The sheets of the Excel file in order
+
+**1. General statistics**
+
+These can be output statistics (e.g. the total number of nuclei in the image) or input parameters (e.g. Max distance). The statistics are grouped by the function that calculated them: 'Nuclei indication' first, then 'Cluster nuclei', and 'Branching points' last. Pixel size is a user input for the indication of nuclei and is used in the calculation of several other parameters. Total nuclei is the total number of nuclei in the image. Nuclei in the mask is the total number of nuclei whose center is inside the MyHC mask. The fusion index is calculated as ``(Nuclei in mask)/(Total nuclei)``. + Nuclei is the number of nuclei with a center in the marker channel mask, while + Nuclei in mask is the number of nuclei with a center that is in both the MyHC and the marker channel mask. Number of clusters is the total number of clusters found (the 'cluster' containing all other nuclei is not counted). Nucleus diameter and Max distance are specified by the user before clustering. Average Rsq and Average RMSE are calculated from linear and orthogonal regression on the clusters, respectively. Branching points is the total number of branching points in the image. Myotubes is the number of separate objects in the MyHC mask. Points/myotube is calculated as ``(Branching points)/(Myotubes)``.
+
+**2. Nuclei information**
+
+Image coordinates of individual nuclei (in pixels), as well as columns indicating whether they are a part of the MyHC and marker channel mask. The last column holds the label of the cluster that the nucleus belongs to. '-1' means the nucleus is not part of a cluster.
+
+**3. Clustering data**
+
+The first column holds the labels corresponding to the clusters in the output image (see 'Output images'). The next three columns are the intercept, slope and linearity parameter determined using nuclei coordinates for linear regression, while the last three columns are the same parameters, but determined using orthogonal regression. It is important to note that Rsq is not a good linearity metric, since it is not independent of the orientation of the cluster. You may notice that while some clusters have a low RMSE value (good linearity), they also have a low Rsq (poor linearity). This is because Rsq goes to 0 for perfectly horizontal and vertical lines.
+
+**4. Myotube data**
+
+Sorted from the largest to the smallest myotube. Total Area is calculated as the number of pixels that myotube occupies, divided by ``(pixel size)^2`` to obtain a value in µm. % of myotube area is the percentage of all MyHC-positive pixels that a myotube occupies. % of image area is the percentage of all image pixels that a myotube occupies.
+
+**5. Branching point coordinates**
+
+**6. Diameter measurements**
+
+Separate measurements have their own header with the average and standard deviation, and are stacked below eachother. The measurements at individual points (and the coordinates of these points) are listed below the header, with the diameters calculated as ``((distance to the closest black pixel)*2)/(pixel size)``.
+
+### Output images
