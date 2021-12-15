@@ -108,3 +108,4 @@ Released 30/09/2021
 - Added a check to see if limits are correct
 - Removed DAPI, MyHC and MyoD labels
 - Renamed Min distance to Max distance
+- Changed placeholder image
