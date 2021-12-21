@@ -3,7 +3,7 @@ The Myotube Analyzer is an open source app made specifically for the analysis of
 
 # Installation
 1. Download (click on 'MA_Installer.exe' and find the download button) and run the installer
-1. Allow the installer to make changes (Only on Windows)
+1. Allow the installer to make changes
 1. Click 'Next'
 1. Choose the installation folder (This is where log files appear if you do not opt for a desktop shortcut)
 1. Install MATLAB runtime
