@@ -2,7 +2,7 @@
 This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app (to be published)
 
 ## Installation
-1. Download and run the installer
+1. Download (click on 'MA_Installer.exe' and find the download button) and run the installer
 1. Allow the installer to make changes
 1. Click 'Next'
 1. Choose the installation folder (This is where log files appear if you do not opt for a desktop shortcut)
