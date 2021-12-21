@@ -1,5 +1,5 @@
 # Myotube Analyzer Manual
-This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app: (link)
+This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app (to be published)
 
 ## Installation
 1. Download and run the installer
@@ -73,7 +73,7 @@ If no output file exists yet, clicking 'Indicate nuclei' will prompt the user to
 
 #### Nuclei indication guidelines
 * When in doubt whether a structure is a nucleus: remove it
-* For poorly assigned centres (asterisk not centered but touching the border)
+* For poorly assigned centres (asterisk is not centered, asterisks are missing, too many asterisks)
   * Less than 4 nuclei in the neighbourhood: leave as is, only add missing nuclei or remove excess
   * More than 4 nuclei in the neighbourhood: remove and reassign centres
   * When in doubt: remove and redo
