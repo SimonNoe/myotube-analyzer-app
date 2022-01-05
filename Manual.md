@@ -2,7 +2,7 @@
 This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app (to be published)
 
 ## Installation
-1. Download and run the installer
+1. Download (click on 'MA_Installer.exe' and find the download button) and run the installer
 1. Allow the installer to make changes
 1. Click 'Next'
 1. Choose the installation folder (This is where log files appear if you do not opt for a desktop shortcut)
@@ -26,6 +26,9 @@ These are some general tips and rules that may help you when using the Myotube A
 Images used for analysis must be separate RGB channels in the JPG or PNG format. Microscope image files may be exported to these formats, and existing images in other formats may be mass-converted using tools like [XnConvert](https://www.xnview.com/en/xnconvert). To start the analysis, select an image for the red and blue channels. The red channel should contain myotubes, and the blue channel should contain nuclei. The green channel is optional and can be added later if necessary. It should contain a marker for nuclei (such as MyoD).
 
 ### 2. Adjusting image levels
+
+![Adjust levels](https://user-images.githubusercontent.com/62990029/146957909-6ee4eb8f-1fa7-428b-a64a-f3b22ea646f4.png)
+
 The images selected for analysis need to be adjusted to improve contrast and visibility of structures. This step cannot be skipped, since the program only uses images created in this step for the other parts of the analysis. If your images have already been altered to improve their contrast and visibility, opening and saving the images with this function will allow you to continue to the next steps in the analyis as well.
 
 To start, click the 'Adjust levels' button, then select which channel to adjust. The levels of the image can be adjusted using either the sliders or the text box values. To update the image, click the 'Adjust' button. For the best results, keep the lower input value as high as possible without removing structures, this will get rid of noise. The upper input value should be kept as low as possible without saturating the image, this will result in better contrast and visibility. Setting the upper input value first will make it easier to set the lower input value correctly. Once visibility and contrast are satisfactory, the adjusted image may be saved, and the process can be repeated for the other channels.
@@ -33,6 +36,9 @@ To start, click the 'Adjust levels' button, then select which channel to adjust.
 **Output:** The adjusted image of the selected channel, saved under the original name with the suffix '\_adjusted'.
 
 ### 3. Creating/editing a mask
+
+![Edit mask](https://user-images.githubusercontent.com/62990029/146957981-0847f387-0fd3-405b-ac30-295da1f31862.png)
+
 The mask created in this function is used to indicate which nuclei are inside myotubes, and to calculate metrics like the number of myotubes, number of branching points, myotube coverage and myotube diameter. This is the most important step of the analysis, and should be done carefully. Note that revisiting this step and changing the mask will require you to redo the steps after this one, since any changes do not automatically carry over to their outputs.
 
 Click the 'Edit mask' button to start. If a mask does not exist already, the program will prompt you to select a threshold to create an initial mask. Set this threshold as low as possible without introducing noise (white speckles in the binary image). The mask created using the threshold can then be edited using the available functions. If a mask already exists, the program will load this mask and take the user straight to the editing functions.
@@ -58,6 +64,9 @@ Click the 'Edit mask' button to start. If a mask does not exist already, the pro
 **Output:** a PNG image containing the mask, with different myotubes in a different colour. The file is named after the red channel image with the suffix '\_mask'.
 
 ### 4. Nuclei indication
+
+![Indicate nuclei](https://user-images.githubusercontent.com/62990029/146958007-977c855e-1e04-4a73-8d97-c65f218ab29b.png)
+
 The counting of nuclei allows for the calculation of fusion index, while the nuclei coordinates allow for clustering in the next step. If a green channel is present, this step will also count the number of nuclei that are positive for the marker in the channel.
 
 If no output file exists yet, clicking 'Indicate nuclei' will prompt the user to enter the pixel size in µm. After that, the program provides an initial guess for the nuclei centres. If an output file already exists, the app will load the coordinate data from that file. Whichever the case, the app will bring up the editing functions, allowing the user to manually correct the indicated centres.
@@ -81,6 +90,9 @@ If no output file exists yet, clicking 'Indicate nuclei' will prompt the user to
 **Output:** an Excel file with nuclei coordinates on the 2nd page and nuclei counts on the 1st page, named after the blue channel image with suffix '\_output'.
 
 ### 5. Nuclei clustering
+
+![Cluster nuclei](https://user-images.githubusercontent.com/62990029/146958032-fa9318d9-dd76-41db-a412-f90adda18eea.png)
+
 This function uses the nuclei coordinates determined in the previous function to find nuclei clusters based on 3 parameters: number of neighbours, distance between nuclei and nucleus diameter.
 
 After clicking the 'Nuclei clustering' button, the user is prompted to enter the nucleus diameter, and the maximal edge-to-edge distance between nuclei. Larger values will yield more and larger clusters. The minimal number of nuclei in a group is fixed at 4. The program will then run the clustering algorithm with the parameters specified, calculate the trend line through each cluster and show a plot of all clusters. Nuclei that do not belong to a cluster are red and marked as '-1'. All clusters have a positive number. Before saving, make sure to move the legend out of the figure. An image of the plot and legend is saved in the state it was in when telling the program to save.
@@ -88,6 +100,9 @@ After clicking the 'Nuclei clustering' button, the user is prompted to enter the
 **Output:** cluster stats on the 1st page of the output excel file, cluster/trendline properties on the 3rd. A PNG image of the cluster plot, named after the blue channel image with suffix '\_clusters'.
 
 ### 6. Branching
+
+![Branching points](https://user-images.githubusercontent.com/62990029/146958062-784fd968-e546-4ad2-b0ea-57b507dad50c.png)
+
 This function uses the myotube mask to determine myotube properties: number of branching points, myotube coverage and myotube diameter. The branching point analysis is based on the myotube skeleton, lines drawn along the centres of the myotubes.
 
 Click 'Branching points' to start the function. If no branching point analysis was saved previously, the program will provide an initial guess based on the myotube skeletons. Else, the existing analysis is loaded. The program then brings up the editing functions.
@@ -110,6 +125,8 @@ Click 'Branching points' to start the function. If no branching point analysis w
 Clicking 'Find diameter' opens a new figure where you can select points for a diameter measurement (same as the 'Add points' function). The image in the figure is the distance transform of the mask, where the intensity of each pixel is the distance to the closest black pixel. The diameter at each sampled point is calculated as this distance x2.
 
 **Output:** statistics on the 1st page of the output file, myotube properties on the 4th page, branching point coordinates on the 5th page and (if applicable) diameter measurements on the 6th page. The image used for diameter measurements, carrying the name of the blue channel image with the suffix '\_diameters'.
+
+![Branching points output](https://user-images.githubusercontent.com/62990029/146958187-17399c6c-ffd6-466b-a5ee-4c2dc2c2bb77.png)
 
 ## Outputs
 The main strength of the Myotube Analyzer is that it has a lot of different outputs to allow you to come up with your own metrics or analyses. Not all of them were tested in the paper about the program. All numerical outputs are grouped in an Excel file named after the nucleus channel image with separate sheets for different parts of the analysis. Image outputs are in PNG format, named after either the nucleus or myotube channel. You can find examples of these outputs in the 'Example analysis' folder.
