@@ -12,7 +12,7 @@ This manual contains installation instructions and intructions + guidelines for 
 The installer will now complete the installation, after which you can start the app by running the .exe file in the installation folder, or by using the desktop shortcut if you chose that option.
 
 ## Instructions
-This section explains all buttons and dials of the Myotube Analyzer app, in the order of a normal analysis procedure. The last part of this section gives an overview of all outputs of the app, and explains how to aggregate data from multiple image sets. The guidelines provided in this section are those used for the analyses in the publication about this app. You do not have to follow them to obtain usable results, feel free to determine your own guidelines. You are also free to use the images provided in this repository to test the functionality of the app.
+This section explains all buttons and dials of the Myotube Analyzer app, in the order of a normal analysis procedure. The last part of this section gives an overview of all outputs of the app. The guidelines provided in this section are those used for the analyses in the publication about this app. You do not have to follow them to obtain usable results, feel free to determine your own guidelines. You are also free to use the images provided in this repository to test the functionality of the app.
 
 ### General
 These are some general tips and rules that may help you when using the Myotube Analyzer:
