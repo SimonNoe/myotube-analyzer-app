@@ -1,5 +1,5 @@
 # Myotube Analyzer App
-The Myotube Analyzer is an open source app made specifically for the analysis of microscopic images taken of muscle stem cell cultures. The app was developed for the 3D-MMAP research group at KU Leuven (Belgium). All technical details can be found in the paper about the app, which is currently being reviewed. A detailed user manual and an explanation of the outputs can be found in the 'Manual.md' file. An example of an analysis performed with the app can be found in the 'Example Analysis' folder.
+The Myotube Analyzer is an open source app made specifically for the analysis of microscopic images taken of muscle stem cell cultures. The app was developed for the 3D-MMAP research group at KU Leuven (Belgium). All technical details can be found in the [paper about the app](https://doi.org/10.1186/s13395-022-00297-6). A detailed user manual and an explanation of the outputs can be found in the 'Manual.md' file. An example of an analysis performed with the app can be found in the 'Example Analysis' folder.
 
 # Installation
 1. Download (click on 'MA_Installer.exe' and find the download button) and run the installer
