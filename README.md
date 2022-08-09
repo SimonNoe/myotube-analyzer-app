@@ -15,4 +15,5 @@ The installer will now complete the installation, after which you can start the 
 ## Version 1.0.1 (Released 09/08/2022)
 * Added the number of nuclei per myotube
 * Corrected a small error in the calculation of myotube surface area, all myotubes were very slightly underestimated
-Re-running the branching points function in the new version on existing data is enough for both of these changes to take effect.
+
+Re-running the branching points function using the new version on existing data is enough for both of these changes to take effect.
