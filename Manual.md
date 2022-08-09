@@ -153,9 +153,11 @@ The first column holds the labels corresponding to the clusters in the output im
 
 **4. Myotube data**
 
-![image](https://user-images.githubusercontent.com/62990029/146202789-71601c6e-c484-46e7-a531-005ba10ffbc9.png)
+![image](https://user-images.githubusercontent.com/62990029/183628645-300bf525-4aff-44d6-b949-f672d1803323.png)
 
 This sheet is sorted from the largest to the smallest myotube. Total Area is calculated as the number of pixels that myotube occupies, divided by ``(pixel size)^2`` to obtain a value in µm. % of myotube area is the percentage of all MyHC-positive pixels that a myotube occupies. % of image area is the percentage of all image pixels that a myotube occupies.
+
+**As of Version 1.0.1:** Number of nuclei is calculated by counting the number of nuclei in each myotube.
 
 **5. Branching point coordinates**
 
