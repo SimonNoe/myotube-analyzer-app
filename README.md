@@ -17,3 +17,8 @@ The installer will now complete the installation, after which you can start the 
 * Corrected a small error in the calculation of myotube surface area, all myotubes were very slightly underestimated
 
 Re-running the branching points function using the new version on existing data is enough for both of these changes to take effect.
+
+## Version 1.0.2 (Released 24/09/2022)
+* Fixed an issue with indexed (single channel) PNG images
+* Minor bugfixes
+
