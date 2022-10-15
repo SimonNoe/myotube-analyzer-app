@@ -22,3 +22,6 @@ Re-running the branching points function using the new version on existing data 
 * Fixed an issue with indexed (single channel) PNG images
 * Minor bugfixes
 
+## Version 1.0.3 (Released 15/10/2022)
+* Fixed an issue where the app did not accept .jpg images
+
