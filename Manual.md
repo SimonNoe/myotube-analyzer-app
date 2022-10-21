@@ -1,5 +1,5 @@
 # Myotube Analyzer Manual
-This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the publication about this app (to be published)
+This manual contains installation instructions and intructions + guidelines for performing analyses with the Myotube Analyzer app. Technical details can be found in the [publication](https://skeletalmusclejournal.biomedcentral.com/articles/10.1186/s13395-022-00297-6) about the app.
 
 ## Installation
 1. Download (click on 'MA_Installer.exe' and find the download button) and run the installer
