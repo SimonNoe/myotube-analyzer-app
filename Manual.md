@@ -23,7 +23,7 @@ These are some general tips and rules that may help you when using the Myotube A
 * If you run into an error (evidenced by a sound effect and the app becoming unresponsive), restart the app. 
 
 ### 1. Image selection
-Images used for analysis must be separate RGB channels in the JPG or PNG format. Microscope image files may be exported to these formats, and existing images in other formats may be mass-converted using tools like [XnConvert](https://www.xnview.com/en/xnconvert). To start the analysis, select an image for the red and blue channels. The red channel should contain myotubes, and the blue channel should contain nuclei. The green channel is optional and can be added later if necessary. It should contain a marker for nuclei (such as MyoD).
+Images used for analysis must be separate RGB channels in the JPG or PNG format. Microscope image files may be exported to these formats, and existing images in other formats may be mass-converted using tools like [XnConvert](https://www.xnview.com/en/xnconvert). To start the analysis, select an image for the red and blue channels. The red channel should contain myotubes, and the blue channel should contain nuclei. The green channel is optional and can be added later if necessary. It should contain a marker for nuclei (such as MyoD). Note that the images will not appear automatically after selection.
 
 ### 2. Adjusting image levels
 
